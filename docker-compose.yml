@@ -1,0 +1,33 @@
+version: "3"
+
+# docker-compose up --build -d go-dev && docker logs -f go-dev
+
+services:
+  go-dev:
+    build: ./
+    volumes:
+      - ./myapp:/usr/src/myapp
+    links:
+      - go-db:db
+    stdin_open: true
+    tty: true
+    container_name: go-dev
+    entrypoint: realize start --run
+    ports:
+      - 1080:8080
+    depends_on:
+      - go-db
+
+  go-db:
+    image: mysql:8
+    container_name: go-db
+    environment:
+      MYSQL_ROOT_PASSWORD: account
+      MYSQL_DATABASE: account
+      MYSQL_USER: account
+      MYSQL_PASSWORD: account
+      MYSQL_PORT: 3306
+    ports:
+      - 1081:3306
+    entrypoint:
+      ["/entrypoint.sh", "--default-authentication-plugin=mysql_native_password"]

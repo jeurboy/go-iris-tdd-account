@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "01d12c97-92c1-479b-8d0a-d5d97c6352ab",
+		"name": "Golang-Account-TDD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getUserByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1080/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FName\" : \"Jeur 2\",\n\t\"LName\" : \"Mahasith\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Money\" : 101.00\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1080/account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postAccountUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1080/account/1/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"account",
+						"1",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
